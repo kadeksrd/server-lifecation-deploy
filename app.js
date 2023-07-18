@@ -16,10 +16,6 @@ const mongoose = require("mongoose");
 //   useFindAndModify: false,
 // });
 
-var corsOptions = {
-  origin: "https://server-lifecation-deploy-production.up.railway.app/",
-};
-
 mongoose.connect(
   "mongodb://mongo:OmdETqpcENwuzlr5BZu0@containers-us-west-7.railway.app:7261",
   // "mongodb+srv://lifecation_admin:o5jQbh9MrSpKXYga@cluster0.jimsc9a.mongodb.net/db_staycation?retryWrites=true&w=majority",
@@ -40,7 +36,7 @@ const apiRouter = require("./routes/api");
 var app = express();
 
 // view engine setup
-app.use(cors(corsOptions));
+app.use(cors);
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
