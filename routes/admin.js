@@ -3,7 +3,7 @@ const adminController = require("../controllers/adminController");
 const { uploadSingle, uploadMultiple } = require("../middleware/multer");
 const auth = require("../middleware/auth");
 // login
-router.get("/signin", adminController.viewSignin);
+router.get("/signin",  adminController.viewSignin);
 router.post("/signin", adminController.actionSignin);
 router.use(auth);
 router.get("/logout", adminController.actionLogout);
