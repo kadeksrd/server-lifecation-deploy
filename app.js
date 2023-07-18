@@ -3,6 +3,7 @@ var express = require("express");
 var cors = require("cors");
 var path = require("path");
 var cookieParser = require("cookie-parser");
+const corsOption = require("./cors/corsOption");
 var logger = require("morgan");
 const methodOverride = require("method-override");
 const session = require("express-session");
@@ -36,9 +37,6 @@ const apiRouter = require("./routes/api");
 var app = express();
 
 // view engine setup
-var corsOption = {
-  origin: "server-lifecation-deploy-production.up.railway.app",
-};
 
 app.use(cors(corsOption));
 app.set("views", path.join(__dirname, "views"));
