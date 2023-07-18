@@ -11,7 +11,7 @@ module.exports = {
     try {
       const mostPicked = await Item.find()
         .select("_id title country city unit price imageId")
-        .limit(6)
+        .limit(5)
         .populate({ path: "imageId", select: "_id imageUrl" });
 
       const category = await Category.find()
