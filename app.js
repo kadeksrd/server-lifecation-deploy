@@ -35,13 +35,9 @@ const apiRouter = require("./routes/api");
 
 var app = express();
 
-var corsOption = {
-  origin: "server-lifecation-deploy-production.up.railway.app",
-};
-
 // view engine setup
 
-app.use(cors(corsOption));
+app.use(cors());
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
